@@ -1,0 +1,65 @@
+ @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap'); 
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Muli', sans-serif;
+    background-color: #f6f7fb;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+}  
+.container{
+    display: flex;
+    margin-bottom: 30px;
+}
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid lightgray;
+    text-align: center;
+    position: relative;
+    margin: 20px 29.5px;
+    background-color: white;
+    color: grey;
+}
+.circle:not(:first-child)::before{
+   content: '';
+   position: absolute;
+   height: 5px;
+   width: 64px;
+   background-color: lightgray;
+   right: 103%;
+   top: 30%;
+}
+.circle.active{
+    border: 5px solid #3498db;
+}
+.circle.active::before{
+    background-color: #3498db;
+}
+button{
+    background: lightgray;
+    color: white;
+    border: 0;
+    border-radius: 7px;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: #3498db;
+}
+#previous{
+    margin-right: 10px;
+}
+button:active{
+    transform: scale(0.98);
+}
+button:disabled{
+    background-color: lightgray;
+    cursor: not-allowed;
+}
